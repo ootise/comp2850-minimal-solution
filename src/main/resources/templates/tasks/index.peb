@@ -84,7 +84,6 @@
     {# Task List #}
     <section aria-labelledby="list-heading">
         <h2 id="list-heading">Your Tasks</h2>
-
         <div id="task-area">
             {% include "tasks/_list.peb" %}
             {% include "tasks/_pager.peb" %}
