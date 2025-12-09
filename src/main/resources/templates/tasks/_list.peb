@@ -1,3 +1,10 @@
+<button type="submit">!! Delete All Tasks !!</button>
+  <a href="/tasks"
+      hx-get="/tasks/{{ task.id }}/view"
+      hx-target="#task-{{ task.id }}"
+      hx-swap="outerHTML"
+  </a>
+
 <ul id="task-list" aria-describedby="result-count">
   {% for task in page.items %}
     {% include "tasks/_item.peb" with {"task": task} %}

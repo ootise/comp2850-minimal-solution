@@ -52,8 +52,8 @@
     /* Override Pico.css button color for WCAG 1.4.3 AA compliance */
     button[type="submit"],
     button {
-      background: #ff00b3ff !important;
-      color: black !important; /* White text on blue background for better contrast */
+      background: #0e5dd3ff !important;
+      color: white !important; 
     }
   </style>
 </head>
@@ -73,3 +73,6 @@
   {% include "_layout/_footer.peb" %}
 </body>
 </html>
+
+
+/* White text on blue background for better contrast */
