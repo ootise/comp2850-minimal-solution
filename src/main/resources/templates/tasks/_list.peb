@@ -1,9 +1,9 @@
-<button type="submit">!! Delete All Tasks !!</button>
-  <a href="/tasks"
-      hx-get="/tasks/{{ task.id }}/view"
-      hx-target="#task-{{ task.id }}"
-      hx-swap="outerHTML"
-  </a>
+  <form action="/tasks/deleteAll" method="post" style="display: inline;"
+        hx-delete="/tasks/DelAll"
+        hx-swap="outerHTML"
+        hx-confirm="Delete all tasks?">
+    <button type="submit" aria-label="Deleted all tasks">!! Delete All Tasks !!</button>
+  </form>
 
 <ul id="task-list" aria-describedby="result-count">
   {% for task in page.items %}

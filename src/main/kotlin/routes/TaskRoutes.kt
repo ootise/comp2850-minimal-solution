@@ -42,7 +42,7 @@ fun Routing.configureTaskRoutes(store: TaskStore = TaskStore()) {
     delete("/tasks/{id}") { call.handleDeleteTask(store) }  // HTMX path (RESTful)
     post("/tasks/{id}/delete") { call.handleDeleteTask(store) }  // No-JS fallback
     get("/tasks/search") { call.handleSearchTasks(store) }
-    delete("/tasks/") { call.handleDeleteAllTasks(store) } 
+    delete("/tasks/DelAll") { call.handleDeleteAllTasks(store) } 
     post("/tasks/deleteAll") { call.handleDeleteAllTasks(store) }  // No-JS fallback
 }
 
@@ -181,8 +181,7 @@ private suspend fun ApplicationCall.handleToggleTask(store: TaskStore) {
  * Handle task deletion.
  */
 private suspend fun ApplicationCall.handleDeleteAllTasks(store: TaskStore) {
-    
-
+    store.clear()
 }
 private suspend fun ApplicationCall.handleDeleteTask(store: TaskStore) {
     timed("T4_delete", jsMode()) {
